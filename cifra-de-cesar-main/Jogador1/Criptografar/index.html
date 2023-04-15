@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Criptografar - Jogador 1</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<form method="post">
+		<div id="pagina">
+			<div id="header">
+				<span id="span-setas">
+					<button type="button" onclick="diminuirLetra()">
+						<img src="img/SetaEV.png" alt="SetaEsquerda" class="setas"
+							onmouseenter="setasPretas('esquerda')" id="seta-esquerda"
+							onmouseleave="setasVerdes('esquerda')" onclick="mudarTexto()">
+
+					</button>
+
+					<img src="img/chaves/ChaveA.png" alt="A" id="chave">
+
+					<button type="button" onclick="aumentarLetra()">
+						<img src="img/SetaDV.png" alt="SetaDireita" class="setas" onmouseenter="setasPretas('direita')"
+							id="seta-direita" onmouseleave="setasVerdes('direita')" onclick="mudarTexto()">
+					</button>
+				</span>
+				<span id="div-perfil">
+					
+					<span>JOGADOR 1</span>
+					<img src="img/PerfilJogador1.png">
+				</span>
+			</div>
+
+			<div id="div-textareas">
+				<textarea name="criptografar" class="textareas" id="texto-cripto" cols="55" rows="5"
+					placeholder="Digite sua mensagem" onkeypress="cripto()" maxlength="100"></textarea>
+				<textarea class="textareas" id="texto-resul" cols="55" rows="5" readonly
+					placeholder="Resultado"></textarea>
+			</div>
+
+			<div id="rodape">
+				<div id="div-interrogacao-escondida">
+					<img src="img/InterrogacaoVerde.png" alt="interrogacao" id="interrogacao" />
+				</div>
+				
+				<div id="div-buttons">
+					<button type="reset" value="Limpar" class="buttons" id="limpar">LIMPAR</button>
+					<button type="submit" value="Enviar" class="buttons" id="enviar">ENVIAR</button>
+				</div>
+
+				<div id="div-interrogacao">
+					<img src="img/InterrogacaoVerde.png" alt="interrogacao" id="interrogacao" />
+				</div>
+			</div>
+		</div>
+		<div id="div-ajuda">
+			<img src="img/Ajuda.png" alt="Ajuda" id="ajuda">
+		</div>
+	</form>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

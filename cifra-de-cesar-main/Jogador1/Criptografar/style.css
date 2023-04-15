@@ -1,0 +1,254 @@
+/* 
+	Padrões:
+		Variáveis kebab-case (isso-e-uma-variavel)
+		Instruções devem aparecer no CSS, de acordo com a ordem em que aparecem no HTML (o máximo possível)
+		Identação padrão: 1 tab referente a 4 espaços
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Inter:wght@900&family=Roboto&display=swap');
+
+@font-face {
+  font-family: Videotype;
+  src: url('fonts/videotype.ttf');
+}
+
+* {
+	font-family: Videotype;	
+}
+
+html, body {
+	min-height: 100vh;
+}
+
+body {
+	background-image: url('img/Wallpaper.gif');
+    background-color: #010;
+    background-blend-mode: multiply;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin: 1rem 0;
+	padding: 5px;
+}
+
+#span-setas {
+	display: flex;
+	align-items: flex-end;
+	gap: 15px;
+}
+
+.setas {
+	width: 40px;
+}
+
+#span-setas button {
+	border-radius: 10px;
+	background: none;
+	border: none;
+}
+
+#chave {
+    width: 100px;
+	transition: all 1s;
+}
+
+.animacao-chave-direita {
+	animation: chaveEsquerda 0.5s;
+}
+
+.animacao-chave-esquerda {
+	animation: chaveDireita 0.5s;
+}
+
+@keyframes chaveDireita {
+	0% {
+		transform: translateX(0);
+		opacity: 0.75;
+	}
+
+	5% {
+		opacity: 0.50;
+	}
+
+	25% {
+		transform: translateX(50px);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateX(-50px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes chaveEsquerda {
+	0% {
+		transform: translateX(0);
+		opacity: 0.75;
+	}
+
+	5% {
+		opacity: 0.5;
+	}
+
+	25% {
+		transform: translateX(-50px);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateX(50px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+#div-perfil {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	color: #d9d9d9;
+	font-size: 25px;
+}
+
+#div-perfil img {
+	 width: 65px;
+}
+
+#div-textareas {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	padding: 5px;
+}
+
+.textareas {
+	transition: transform 200ms;
+	border-radius: 20px;
+    width: 500px;
+    height: 350px;
+    resize: none;
+    border: none;
+	padding: 3rem 2.5rem;
+    outline: none;
+    font-size: 30px;
+    text-align: justify;
+}
+
+.textareas:focus { 
+     transform: scale(0.98, 0.98);
+}
+
+#texto-cripto {
+	background-color: #d9d9d9;
+}
+
+#texto-resul{
+    background-color: #007b12;
+}
+
+#texto-resul::placeholder {
+	color: #d9d9d9;
+}
+
+#cadeado {
+    width: 100px;
+    margin: 120px 0 120px 0;
+}
+
+#rodape {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 2rem 0;
+}
+
+#div-interrogacao-escondida {
+	visibility: hidden;
+}
+
+#div-buttons {
+    display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.buttons {
+	width: 175px;
+    max-width: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+	font-size: 25px;
+    font-weight: bolder;
+	transition: transform 100ms;
+}
+
+.buttons:hover {
+	transform: translateY(-5px);
+}
+
+.buttons:active, .setas:active {
+    transform: translateY(2.5px);
+}
+
+#limpar {
+    background-color: #d9d9d9;
+	color: #007b12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#enviar {
+    background-color: #007b12;
+	color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#div-interrogacao {
+	display: flex;
+}
+
+#interrogacao {
+	width: 30px;
+	opacity: 0.5;
+}
+
+#div-ajuda {
+	display: flex;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0,0,0,0.9);
+	z-index: -10;
+	opacity: 0;
+	transition: opacity 250ms;
+	backdrop-filter: blur(8px);
+}
+
+#ajuda {
+	width: 1000px;
+}
